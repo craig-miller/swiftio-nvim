@@ -29,13 +29,13 @@
 
 ```lua
 {
-	"craig-miller/swiftio",
-	config = function()
-		require("swiftio").setup({
-            -- Root of your mm_sdk, no trailing /
-			mm_sdk_path = "~/mm-sdk",
-		})
-	end,
+   "craig-miller/swiftio",
+   config = function()
+      require("swiftio").setup({
+	    -- Root of your mm_sdk, no trailing /
+	    mm_sdk_path = "~/mm-sdk",
+      })
+   end,
 }
 ```
 
