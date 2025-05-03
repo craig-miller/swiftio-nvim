@@ -20,7 +20,7 @@
 ## Pre-requisites
    * macOS
    * [mm-sdk](https://docs.madmachine.io/overview/getting-started/software-prerequisite)
-      | > [!NOTE] You do not need the VSCode Extension listed on that page
+       > VSCode Extension is not required
    * [nu shell](https://github.com/nushell/nushell)
 
 ## Installation 
