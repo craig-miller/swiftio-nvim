@@ -1,34 +1,45 @@
-# nvim-plugin-template
+# swiftio-nvim
+**swiftio-nvim** is a NeoVim plugin for the MadMachine Embedded Swift Build/Deploy Tools available in the MM-SDK.
 
-Neovim plugin template; includes automatic documentation generation from README, integration tests with Busted, and linting with Stylua
+## Features
+   * **init**
+   * **build**
+   * **clean**
+   * **download** to your swiftio micro (standalone or playground)
 
-## Usage
+   Extra
+   * **monitor** swiftio micro board
 
-1. Click `use this template` button generate a repo on your github.
-2. Clone your plugin repo. Open terminal then cd plugin directory.
-3. Run `python3 rename.py your-plugin-name`. This will replace all `nvim-plugin-template` to your `plugin-name`. 
-   Then it will prompt you input `y` or `n` to remove example codes in `init.lua` and
-   `test/plugin_spec.lua`. If you are familiar this repo just input `y`. If you are looking at this template for the first time I suggest you inspect the contents. After this step `rename.py` will also auto-remove.
+## Pre-requisites
+   * macOS
+   * [mm-sdk](https://docs.madmachine.io/overview/getting-started/software-prerequisite)
+      | > [!NOTE] You do not need the VSCode Extension listed on that page
+   * [nu shell](https://github.com/nushell/nushell)
 
-Now you have a clean plugin environment. Enjoy!
+## Installation 
 
-## Format
+### Lazy.nvim
 
-The CI uses `stylua` to format the code; customize the formatting by editing `.stylua.toml`.
+```lua
+{
+	"craig-miller/swiftio",
+	config = function()
+		require("swiftio").setup({
+            -- Root of your mm_sdk, no trailing /
+			mm_sdk_path = "~/mm-sdk",
+		})
+	end,
+}
+```
 
-## Test
 
-See [Running tests locally](https://github.com/nvim-neorocks/nvim-busted-action?tab=readme-ov-file#running-tests-locally)
-- [ ]  2025-05-0211:45
-
-## CI
-
-- Auto generates doc from README.
-- Runs the [nvim-busted-action](https://github.com/nvim-neorocks/nvim-busted-action) for test.
-- Lints with `stylua`.
-
-## More
-
-To see this template in action, take a look at my other plugins.
+## Commands 
+| Command | Description|
+| --------------- | ---------------------------------------- |
+| SwiftIOInit | mm init |
+| SwiftIOBuild| mm build |
+|SwiftIOClean | mm clean |
+| SwiftIODownload | mm download |
+| SwiftIOMonitor | Connect to swiftio micro debug console   |
 
 ## License MIT
