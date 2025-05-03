@@ -128,7 +128,7 @@ function M.clean()
 end
 
 function M.init()
-  run_command_in_split_autoclose(_config.mm .. ' init | less', 'SwiftIO Init')
+  run_command_in_split_autoclose(_config.mm .. ' init -b SwiftIOMicro | less', 'SwiftIO Init')
 end
 
 function M.build()
