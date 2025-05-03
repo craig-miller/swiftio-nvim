@@ -1,6 +1,12 @@
 # swiftio-nvim
 **swiftio-nvim** is a NeoVim plugin for the MadMachine Embedded Swift Build/Deploy Tools available in the MM-SDK.
+
+**MadMachine Build**
 ![MadMachine Build](https://github.com/user-attachments/assets/f290a10c-d55f-4012-afc5-063cdbaaec65)
+
+**Serial Monitor**
+![Serial Monitor](https://github.com/user-attachments/assets/a15867ed-4129-47af-b1f6-4ae48228364f)
+
 
 ## Features
    * **init**
