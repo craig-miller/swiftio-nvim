@@ -98,45 +98,32 @@ local function get_plugin_script_path(script)
   return matches[1]
 end
 
--- function M.monitor()
---   local device =
---     vim.fn.systemlist('ls /dev/tty.* /dev/cu.* 2>/dev/null | grep wchusbserial | head -1')[1]
---   if not device or device == '' then
---     vim.notify('🚫 SwiftIO device not found (wchusbserial)', vim.log.levels.WARN)
---     return
---   end
---
---   local script = get_plugin_script_path('swiftio-monitor.nu')
---   local status = '🔌 Connected to ' .. device .. ' • Press `q` to quit'
---   run_command_in_split_autoclose('nu ' .. script, status)
--- end
-
 function M.monitor()
   -- Monitor script in a terminal split
   local script = get_plugin_script_path('swiftio-monitor.nu')
-  run_command_in_split_autoclose(script, 'SwiftIO Monitor')
+  run_command_in_split_autoclose(script, 'SwiftIOMicro Monitor')
 end
 
 function M.help()
   local script = get_plugin_script_path('swiftio-help.nu')
-  run_command_in_split_autoclose(script, 'SwiftIO Help')
+  run_command_in_split_autoclose(script, 'SwiftIOMicro Help')
 end
 
 function M.clean()
   local script = get_plugin_script_path('swiftio-clean.nu')
-  run_command_in_split_autoclose(script, 'SwiftIO Clean')
+  run_command_in_split_autoclose(script, 'SwiftIOMicro Clean')
 end
 
 function M.init()
-  run_command_in_split_autoclose(_config.mm .. ' init -b SwiftIOMicro | less', 'SwiftIO Init')
+  run_command_in_split_autoclose(_config.mm .. ' init -b SwiftIOMicro | less', 'SwiftIOMicro Init')
 end
 
 function M.build()
-  run_command_in_split_autoclose(_config.mm .. ' build | less', 'SwiftIO Build')
+  run_command_in_split_autoclose(_config.mm .. ' build | less', 'SwiftIOMicro Build')
 end
 
 function M.download()
-  run_command_in_split_autoclose(_config.mm .. ' download | less', 'SwiftIO Download')
+  run_command_in_split_autoclose(_config.mm .. ' download | less', 'SwiftIOMicro Download')
 end
 
 return M
